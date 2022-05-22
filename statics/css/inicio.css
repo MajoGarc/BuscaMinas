@@ -1,0 +1,106 @@
+*
+{
+    font-size: medium;
+    font-family: 'Franklin Gothic Medium';
+}
+
+.hidden
+{
+    display: none;
+}
+
+body
+{
+    padding: 0;
+    margin: 0;
+    border: 0;
+    background-image: url("../img/fondo.jpeg");
+    background-size: cover;
+    background-repeat: repeat-x;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#contenedor
+{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.contenedor-juego 
+{
+    display: flex;
+    flex-direction: column;
+    margin: 1rem 2rem;
+    align-items: center;
+}
+
+/*título------------------------------------------------------------------------------------------------*/
+img
+{
+    width: 30%;
+    padding: 10px;
+}
+
+/* botón para puntaje----------------------------------------------------------------------------------------------*/
+#boton1
+{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 10px
+}
+
+/*niveles----------------------------------------------------------------------------------------------*/
+.divs
+{
+    width: 100%;
+    padding: 10px;
+}
+
+.niveles
+{
+    width: 200px;
+    height: 100px;
+    background-color: rgb(92, 168, 240);
+    color: rgb(130, 60, 241);
+    text-align: center;
+    border-radius: 25px;
+    justify-content: space-between;
+}
+
+p
+{
+    width: 130px;
+    text-align:center;
+}
+
+/*** Juego-----------------------------------------------------------------------------------------------*/
+.juego
+{
+    display: flex;
+    flex-wrap: wrap;
+    background-color: rgb(219, 202, 229);
+    margin-bottom: 0.5rem;
+}
+
+.juego div 
+{
+    height: 4rem;
+    width: 4rem;
+    box-sizing: border-box;
+    border: 1px solid rgb(47, 0, 59);
+}
+
+.marcada
+{
+    background-color: rgb(146, 176, 215);
+    font-size: 3rem;
+    text-align: center;
+    line-height: 4rem;
+
+    color: black;
+}
