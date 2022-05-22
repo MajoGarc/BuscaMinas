@@ -93,6 +93,8 @@ function compruebaBanderas() {
     }
     if (aciertos === numBomb) {
         fin = true;
+        let fecha = new Date();
+        window.location.href = window.location.href + "?fecha=" + fecha;
     }
 }
 
@@ -168,7 +170,7 @@ function tablerito(evento) {
         casillas.push(casilla);
         
         casilla.addEventListener('click', () => {
-            click(event.target);
+            click(evento.target);
         });
 
         casilla.oncontextmenu = function(event) {
@@ -177,7 +179,7 @@ function tablerito(evento) {
         }
 
         casilla.addEventListener('dblclick', () => {
-            dobleClick(event.target);
+            dobleClick(evento.target);
         });
     }
     numerosVecinas();
