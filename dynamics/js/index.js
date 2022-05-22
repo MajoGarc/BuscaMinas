@@ -62,7 +62,7 @@ function bomba(casillaClickeada) {
         if (casilla.classList.contains('bomba')) {
             casilla.innerHTML = '🎇';
             casilla.classList.remove('bomba');
-            casilla.classList.add('seleccionada');
+            casilla.classList.add('marcada');
         }
     });
 }
@@ -70,7 +70,7 @@ function bomba(casillaClickeada) {
 function ponerBanderas(casilla) {
     if (fin) return;
 
-    if (!casilla.classList.contains('seleccionada') && numBanderas < numBomb) {
+    if (!casilla.classList.contains('marcada') && numBanderas < numBomb) {
         if (!casilla.classList.contains('bandera')) {
             casilla.classList.add('bandera');
             casilla.innerHTML = '🏴‍☠️';
@@ -102,24 +102,24 @@ function actualizaBanderas() {
 }
 
 function click(casilla) {
-    if (casilla.classList.contains('seleccionada')|| fin) return;
+    if (casilla.classList.contains('marcada')|| fin) return;
 
     if (casilla.classList.contains('bomba')) {
         bomba(casilla);
     } else {
         let total = casilla.getAttribute('data');
         if (total != 0) {
-            casilla.classList.add('seleccionada');
+            casilla.classList.add('marcada');
             casilla.innerHTML = total;
             return;
         }
-        casilla.classList.add('seleccionada');
+        casilla.classList.add('marcada');
         abrirVecinas(casilla);
     }
 }
 
 function dobleClick(casilla) {
-        if (!casilla.classList.contains('seleccionada') || fin) return;
+        if (!casilla.classList.contains('marcada') || fin) return;
         abrirVecinas(casilla);
 }
 
@@ -168,7 +168,7 @@ function tablerito(evento) {
         casillas.push(casilla);
         
         casilla.addEventListener('click', () => {
-            click(evento.target);
+            click(event.target);
         });
 
         casilla.oncontextmenu = function(event) {
@@ -177,7 +177,7 @@ function tablerito(evento) {
         }
 
         casilla.addEventListener('dblclick', () => {
-            dobleClick(evento.target);
+            dobleClick(event.target);
         });
     }
     numerosVecinas();
